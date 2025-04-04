@@ -1,38 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap'); /* Additional gothic font */
+
+:root {
+  --averland-gold: #f0b400;
+  --averland-dark-gold: #b38600;
+  --averland-black: #1a1a1a;
+  --averland-red: #8b0000;
+  --parchment-dark: #d6c7a9;
+  --parchment-light: #e8e0cc;
+  --ink-dark: #2b2522;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f2e9;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    color: #8b0000;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .character-stack {
-    margin: 2rem 0;
-  }
-  
-  .character-card {
-    background: #fff;
-    border: 2px solid #8b0000;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .character-title {
-    font-size: 1.8rem;
-    color: #8b0000;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-  }
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  background: url('/backgrounds/parchment.jpg') repeat;
+  background-color: var(--averland-black); /* Fallback */
+  background-size: cover;
+  color: var(--ink-dark);
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 26, 26, 0.4); /* Dark overlay */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--parchment-dark);
+  background-image: url('/backgrounds/old-paper-texture.jpg');
+  border: 4px solid var(--averland-gold);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  border-radius: 0; /* More medieval/fantasy style */
+}
+
+.section-title {
+  font-size: 3rem;
+  color: var(--averland-black);
+  text-align: center;
+  margin: 1rem 0 2.5rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  font-family: 'Pirata One', cursive;
+  letter-spacing: 2px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 3px;
+  background: var(--averland-gold);
+  margin: 0.5rem auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.town-banner {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+  border: 5px solid var(--averland-gold);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.5);
+  filter: saturate(0.8) contrast(1.2); /* Grittier look */
+}
+
+.character-stack {
+  margin: 2.5rem 0;
+}
+
+.character-card {
+  background: var(--parchment-light);
+  background-image: url('/backgrounds/worn-parchment.jpg');
+  padding: 1.8rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  min-height: 320px; /* Adjusted for larger image */
+  position: relative;
+}
+
+.character-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/backgrounds/blood-splatter.png');
+  background-size: cover;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.character-title {
+  font-size: 2.2rem;
+  color: var(--ink-dark);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-family: 'Pirata One', cursive;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid var(--averland-gold);
+  padding-bottom: 0.5rem;
+}
+
+.character-image {
+  height: 300px;
+  width: auto;
+  float: left;
+  margin-right: 2rem;
+  object-fit: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  filter: sepia(0.2) contrast(1.1); /* Grim, weathered look */
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: var(--ink-dark);
+}
+
