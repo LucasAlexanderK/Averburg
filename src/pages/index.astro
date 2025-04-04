@@ -1,11 +1,49 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import TownOverview from '../components/TownOverview.astro';
+import CharacterCard from '../components/CharacterCard.astro';
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Averburg - Imperial Town of Averland</title>
+  </head>
+  <body>
+    <div class="container">
+      <TownOverview />
+
+      <section class="character-stack">
+        <CharacterCard 
+          title="The Count - Leopold von Heldenherz"
+          description="Count Leopold von Heldenherz, a battle-hardened ruler forged in Ostland's frozen wilds, wields the golden Sonnenhammer. Rising from a mercenary past, he led Averburg to prosperity after a devastating greenskin raid, marrying Lady Mathilda for love and alliances. At 57, his scarred visage and silver-streaked hair belie a warrior's vigor, ever ready to defend his town."
+        />
+        <CharacterCard 
+          title="The Son - Albrecht von Heldenherz"
+          description="Albrecht, heir to Averburg and Chapter Master of the Knights of Sigmar's Blood, blends noble duty with martial zeal. Trained from youth in blade and lance, he rose swiftly to lead the order, wielding the blessed sword Felbane. In his thirties, his stern features echo his father’s, tempered by discipline and faith."
+        />
+        <CharacterCard 
+          title="The Captain - Wilhelm Gauss"
+          description="Wilhelm Gauss, Captain of the Steelwatch, is a pragmatic soldier from Averland's borderlands. Rising through the garrison with cunning and resolve, he enforces law with an iron hand, loyal to Count Leopold and protective of Averburg’s folk, despite his stern demeanor."
+        />
+        <CharacterCard 
+          title="The Priest - Volkmar Eisenbrand"
+          description="Volkmar Eisenbrand, a fiery Warrior Priest of Sigmar, hails from Nuln’s shadows. Saved from beastmen by Sigmarites, he wields a warhammer with blessed fury, inspiring troops with sermons of steel. His faith is unyielding, his patience for weakness nil."
+        />
+        <CharacterCard 
+          title="The Hunter - Otto Feuerschlag"
+          description="Otto Feuerschlag, Witch Hunter of the Crimson Vigil, was forged in tragedy—his family burned by witchfire. A grim avenger, he hunts heresy with brutal efficiency, his scarred face a terror to the guilty. He sees himself as a necessary evil, sacrificing mercy for the Empire’s safety."
+        />
+        <CharacterCard 
+          title="The Engineer - Klaus Nehrig"
+          description="Klaus Nehrig, a Nuln-trained gunpowder expert, modernizes Averburg’s defenses after a career-ending mishap. Brilliant but impatient, he clashes with tradition, favoring artillery over swords. Hired by Leopold, he bolsters the town’s walls with innovative cunning."
+        />
+        <CharacterCard 
+          title="The Wizard - Erhard Grimm"
+          description="Erhard Grimm, an Amethyst Wizard from Altdorf, advises Leopold with the eerie wisdom of Shyish, the Wind of Death. Calm and unsettling, he foresees dangers through entropy’s lens, his motives opaque. Many fear his spectral presence invites the doom he claims to avert."
+        />
+      </section>
+    </div>
+  </body>
+</html>
